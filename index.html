@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Speed Analyser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise"></div>
+
+    <div class="container">
+        <header>
+            <div class="badge">LIVE TOOL</div>
+            <h1>API Speed<br><span>Analyser</span></h1>
+            <p class="subtitle">Measure response time, latency & performance of any API endpoint in real time.</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <label for="apiUrl">Target Endpoint</label>
+                <div class="input-row">
+                    <div class="method-badge">POST</div>
+                    <input type="text" id="apiUrl" placeholder="https://your-api.com/endpoint" autocomplete="off" spellcheck="false">
+                </div>
+
+                <div class="input-row" style="margin-top:16px;">
+                    <label for="userInput" style="display:block;margin-bottom:8px;font-size:0.75rem;letter-spacing:0.1em;color:var(--muted);">PAYLOAD TEXT</label>
+                </div>
+                <textarea id="userInput" placeholder="Enter text to send as payload..." rows="3"></textarea>
+
+                <button id="analyzeBtn" onclick="analyzeSpeed()">
+                    <span class="btn-text">Run Analysis</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <span>RESULTS</span>
+                    <div class="dot" id="statusDot"></div>
+                </div>
+                <div id="results">
+                    <p class="placeholder-text">Results will appear here after analysis...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <span>Connected to <code>http://127.0.0.1:8000</code></span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
